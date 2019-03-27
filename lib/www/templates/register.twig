@@ -1,0 +1,90 @@
+{% extends 'layout.twig' %}
+
+{% block header %}
+    {% include 'partials/header.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.twig' %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row form-offset-small">
+            <div class="col s12 m8 l6 offset-m2 offset-l3">
+                <div class="card-panel grey lighten-5 z-depth-1">
+                    <h4 class="orange-text">Registreren</h4>
+                    <form action="/api/v1/register/" method="POST">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first_name" type="text" class="validate">
+                                <label for="first_name">Voornaam / Voorletters</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate">
+                                <label for="last_name">Achternaam</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">E-mail adres</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="phone" type="text" class="validate">
+                                <label for="phone">Telefoonnummer</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s9">
+                                <input id="street" type="text" class="validate">
+                                <label for="street">Straat</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input id="house_no" type="text" class="validate">
+                                <label for="house_no">Huisnummer</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s9">
+                                <input id="place" type="text" class="validate">
+                                <label for="place">Plaats</label>
+                            </div>
+                            <div class="input-field col s3">
+                                <input id="postalcode" type="text" class="validate">
+                                <label for="postalcode">Postcode</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Wachtwoord</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="repeat_pass" type="password" class="validate">
+                                <label for="repeat_pass">Wachtwoord herhalen</label>
+                            </div>
+                        </div>
+                        <div class="switch">
+                            <label>
+                                Nee
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                Ja
+                            </label>
+                            Ik ga akoord met de algemene voorwaarden
+                        </div>
+                        <br/>
+                        <button class="btn waves-effect waves-light btn-large orange" type="submit" name="action">Registreer
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
