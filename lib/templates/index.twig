@@ -18,7 +18,7 @@
                     <h5 class="header col s12 light">Een bank waar jij je thuis kan voelen</h5>
                 </div>
                 <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange lighten-1">Start nu</a>
+                    <a href="/login" id="download-button" class="btn-large waves-effect waves-light orange lighten-1">Start nu</a>
                 </div>
                 <br><br>
 
@@ -77,5 +77,11 @@
     </div>
 
     <script src="js/parallax.js"></script>
-    <script src="js/init.js"></script>
+    <script>
+        (function($){
+            $(function(){
+                $('.parallax').parallax();
+            });
+        })(jQuery);
+    </script>
 {% endblock %}
