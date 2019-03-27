@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>ONZE - Backoffice</title>
+        <style>
+            body {
+                font-family: Sans-Serif;
+            }
+            a {
+                color: #444;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table style="width: 100%" border="1">
+                <thead>
+                    <tr>
+                        <td>
+                            <b>Email</b>
+                        </td>
+                        <td>
+                            <b>State</b>
+                        </td>
+                        <td>
+                            <b>Action</b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td>
+                            {{client.email}}
+                        </td>
+                        <td>
+                            {{client.active ? "Actief" : "Niet actief"}}
+                        </td>
+                        <td data-email='{{client.email}}'>
+                            {{client.active ? "<a class='deactivate'>Deactiveer</a>" : "<a class='activate'>Activeer</a>"}}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script>
+        (function() {
+            var links = document.querySelectorAll("a");
+            
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                
+                link.addEventListener("click", function(e) {
+                    var user = this.parentNode.getAttribute("data-email");
+                    var active = false;
+                    
+                    if (this.classList.contains("activate")) {
+                        active = true;
+                    }
+                    
+                    fetch("/secret/b/a/c/k/o/f/f/i/c/e/activation", {
+                        method: 'post',
+                        headers: {
+                          "Content-type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            email: user,
+                            active: active
+                        })
+                    }).then(function() {
+                        window.location.reload();
+                    });
+                }.bind(link));
+            }
+            
+        })();
+    </script>
+</html>
