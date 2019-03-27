@@ -21,7 +21,9 @@ p {
 .form-offset {
   margin: 20vh 0;
 }
-
+.form-offset-small {
+  margin: 5vh 0;
+}
 .sidenav-trigger {
   color: #26a69a;
 }
