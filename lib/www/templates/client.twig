@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+
+{% block header %}
+    {% include 'partials/header.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.twig' %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row form-offset">
+            <div class="col s12 m8 l6 offset-m2 offset-l3">
+                <div class="card-panel grey lighten-5 z-depth-1">
+                    <h4 class="orange-text">Klantenpaneel</h4>
+                    <p>
+                        U bent succesvol ingelogd.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -13,20 +13,14 @@
         <div class="row form-offset">
             <div class="col s12 m8 l6 offset-m2 offset-l3">
                 <div class="card-panel grey lighten-5 z-depth-1">
-                    <h4 class="orange-text">Inloggen</h4>
+                    <h4 class="orange-text">Verificatie</h4>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+                            <input id="sms" type="text" class="validate">
+                            <label for="sms">SMS code</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Wachtwoord</label>
-                        </div>
-                    </div>
-                    <button class="btn waves-effect waves-light btn-large orange" type="submit" name="action">Login
+                    <button class="btn waves-effect waves-light btn-large orange" type="submit" name="action">Controleer
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -35,11 +29,11 @@
         <script>
             document.querySelector("[name='action']").addEventListener("click", function() {
                 var data = {
-                    email: document.querySelector("#email").value,
-                    password: document.querySelector("#password").value
+                    smsCode: document.querySelector("#sms").value,
+                    unique: "{{code}}"
                 }
                 
-                fetch("/api/v1/login/1", {
+                fetch("/api/v1/login/2", {
                     method: 'post',
                     headers: {
                       "Content-type": "application/json"
@@ -50,7 +44,7 @@
                 }).then(function(obj) {
                     if (typeof obj.success !== "undefined") {
                         if (obj.success) {
-                            window.location = "/login/verify/" + obj.unique;
+                            window.location = "/client/";
                         }
                     }
                 });
