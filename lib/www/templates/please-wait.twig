@@ -1,0 +1,26 @@
+{% extends 'layout.twig' %}
+
+{% block header %}
+    {% include 'partials/header.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.twig' %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row form-offset">
+            <div class="col s12 m8 l6 offset-m2 offset-l3">
+                <div class="card-panel grey lighten-5 z-depth-1">
+                    <h4 class="orange-text">U bent er bijna..</h4>
+                    <p>
+                        Onze medewerkers zijn bezig uw aanvraag te behandelen. U krijgt mail wanneer we u toegang geven tot OnzeBank.
+                        <br>
+                        Klik <a href="/logout">hier</a> om weer uit te loggen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
