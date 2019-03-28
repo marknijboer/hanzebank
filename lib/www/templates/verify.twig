@@ -44,7 +44,9 @@
                 }).then(function(obj) {
                     if (typeof obj.success !== "undefined") {
                         if (obj.success) {
-                            window.location = "/client/";
+                            window.location = "/client";
+                        } else {
+                            alert(obj.message);
                         }
                     }
                 });

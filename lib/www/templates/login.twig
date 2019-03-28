@@ -51,6 +51,8 @@
                     if (typeof obj.success !== "undefined") {
                         if (obj.success) {
                             window.location = "/login/verify/" + obj.unique;
+                        } else {
+                            alert(obj.message);
                         }
                     }
                 });
