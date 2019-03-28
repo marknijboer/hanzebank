@@ -14,7 +14,7 @@
             <div class="col s12 m8 l6 offset-m2 offset-l3">
                 <div class="card-panel grey lighten-5 z-depth-1">
                     <h4 class="orange-text">Registreren</h4>
-                    <form action="/api/v1/register/" method="POST">
+                    <form id="register_form">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="first_name" type="text" class="validate">
@@ -79,12 +79,13 @@
                             Ik ga akoord met de algemene voorwaarden
                         </div>
                         <br/>
-                        <button class="btn waves-effect waves-light btn-large orange" type="submit" name="action">Registreer
+                        <button class="btn waves-effect waves-light btn-large orange" type="submit" name="action" id="register_btn">Registreer
                             <i class="material-icons right">send</i>
                         </button>
                     </form>
                 </div>
             </div>
         </div>
+        <script src="/js/register.js"></script>
     </div>
 {% endblock %}
