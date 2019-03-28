@@ -14,7 +14,7 @@
             <div class="col s12 m8 l6 offset-m2 offset-l3">
                 <div class="card-panel grey lighten-5 z-depth-1">
                     <h4 class="orange-text">Registreren</h4>
-                    <form id="register_form">
+                    <div id="register_form">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="first_name" type="text" class="validate">
@@ -69,10 +69,21 @@
                                 <label for="repeat_pass">Wachtwoord herhalen</label>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="file-field input-field col s12">
+                                <div class="btn orange">
+                                    <span>copie ID</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </div>
                         <div class="switch">
                             <label>
                                 Nee
-                                <input type="checkbox">
+                                <input id="validation" type="checkbox">
                                 <span class="lever"></span>
                                 Ja
                             </label>
